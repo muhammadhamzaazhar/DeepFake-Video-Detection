@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 240, 240, 240;
+  --background-end-rgb: 255, 255, 255;
+  --primary: 220, 38, 38;
+  --primary-dark: 185, 28, 28;
+  --secondary: 15, 40, 50;
+  --accent: 255, 86, 86;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 15, 40, 50;
+    --background-end-rgb: 10, 25, 35;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.circuit-pattern {
+  background-image: url("/circuit-pattern.svg");
+  background-repeat: repeat;
+  background-size: 800px;
+  opacity: 0.1;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, rgb(var(--primary)), rgb(var(--accent)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.btn-primary {
+  @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-md transition-all duration-300;
+}
+
+.btn-outline {
+  @apply border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 font-medium py-2 px-6 rounded-md transition-all duration-300;
+}
+
+.nav-link {
+  @apply hover:text-red-500 transition-colors duration-200;
+}
+
+.upload-zone {
+  @apply border-2 border-dashed rounded-lg p-8 transition-all duration-300 flex flex-col items-center justify-center;
+}
+
+.upload-zone.active {
+  @apply border-red-500 bg-red-50 dark:bg-red-900/20;
+}
