@@ -392,7 +392,7 @@ if __name__ == "__main__":
 
         print(f"\n{Fore.CYAN}=== Inference Started ==={Style.RESET_ALL}")
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        model = TimesformerForVideoClassification.from_pretrained("./weights/best_model_0.3").to(device)
+        model = TimesformerForVideoClassification.from_pretrained("./weights").to(device)
         model.eval()
 
         # thumbnails_tensor = [
